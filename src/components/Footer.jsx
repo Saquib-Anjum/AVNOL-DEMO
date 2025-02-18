@@ -1,7 +1,22 @@
-import React from 'react';
-import { BeakerIcon, Building2, AlignCenterVertical as Certificate, FlaskRound as Flask, Globe2, GraduationCap, Heart, Mail, MapPin, Menu, MicroscopeIcon, Phone, PlusCircle, ShieldCheck, X } from 'lucide-react';
-import logo from '../../public/logo.jpg';
+import React, { useEffect, useState } from "react";
+import { Mail } from "lucide-react";
+import logo from "../../public/logo.jpg";
+
 function Footer() {
+  const [visitCount, setVisitCount] = useState(0);
+
+  useEffect(() => {
+    // Get stored visit count
+    let count = localStorage.getItem("visitCount");
+    if (count) {
+      count = parseInt(count) + 1;
+    } else {
+      count = 1;
+    }
+    setVisitCount(count);
+    localStorage.setItem("visitCount", count);
+  }, []);
+
   return (
     <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto px-4">
@@ -46,8 +61,14 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 AVNOL PHARMACEUTICAL PVT. LMT. All rights reserved.</p>
+
+        {/* Visitor Counter */}
+        <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-400">
+          <p>👥 Visitors Count: <span className="font-bold text-white">{visitCount}</span></p>
+        </div>
+
+        <div className="border-t border-gray-700 mt-4 pt-4 text-center text-gray-400">
+          <p>&copy; 2025 AVNOL PHARMACEUTICAL PVT. LTD. All rights reserved.</p>
         </div>
       </div>
     </footer>

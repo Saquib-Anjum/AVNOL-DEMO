@@ -60,7 +60,7 @@ const services = [
 // Products Section with Fixed Box Height and Scrollable Description
 const ProductSection = () => {
   return (
-    <section className="py-10 bg-gradient-to-r from-blue-400 to-blue-700 text-white">
+    <section className="py-10 bg-gradient-to-r from-green-500 to-blue-600 text-white">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6">Our Products</h2>
 
@@ -109,7 +109,7 @@ const ProductSection = () => {
 // Services Section
 const ServicesSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+    <section className="py-20 bg-gradient-to-r from-violet-500 to-pink-500 text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold mb-12">Services</h2>
         <div className="grid md:grid-cols-3 gap-8">
